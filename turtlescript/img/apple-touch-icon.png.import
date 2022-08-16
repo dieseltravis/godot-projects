@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/apple-touch-icon.png-112a4b633829234659cf64a411adf3f0.image"
+
+[deps]
+
+source_file="res://img/apple-touch-icon.png"
+dest_files=[ "res://.import/apple-touch-icon.png-112a4b633829234659cf64a411adf3f0.image" ]
+
+[params]
+

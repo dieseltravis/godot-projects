@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/favicon-16x16.png-5b2440757dea2cfb7a5ae7c79ccfccbb.image"
+
+[deps]
+
+source_file="res://img/favicon-16x16.png"
+dest_files=[ "res://.import/favicon-16x16.png-5b2440757dea2cfb7a5ae7c79ccfccbb.image" ]
+
+[params]
+

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/snake-hissing-6092.mp3-21833ab9026ca2a5bed2fd9a8b66485a.mp3str"
+
+[deps]
+
+source_file="res://audio/snake-hissing-6092.mp3"
+dest_files=[ "res://.import/snake-hissing-6092.mp3-21833ab9026ca2a5bed2fd9a8b66485a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

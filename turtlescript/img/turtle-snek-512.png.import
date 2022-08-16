@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/turtle-snek-512.png-30ce0c69f903c147fc7ffc1e9480b45a.image"
+
+[deps]
+
+source_file="res://img/turtle-snek-512.png"
+dest_files=[ "res://.import/turtle-snek-512.png-30ce0c69f903c147fc7ffc1e9480b45a.image" ]
+
+[params]
+

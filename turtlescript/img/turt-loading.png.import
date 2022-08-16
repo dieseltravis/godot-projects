@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/turt-loading.png-7fff04cac5b578ef96bb3d65120c6a5f.image"
+
+[deps]
+
+source_file="res://img/turt-loading.png"
+dest_files=[ "res://.import/turt-loading.png-7fff04cac5b578ef96bb3d65120c6a5f.image" ]
+
+[params]
+

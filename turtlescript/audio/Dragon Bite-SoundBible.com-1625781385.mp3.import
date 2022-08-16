@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dragon Bite-SoundBible.com-1625781385.mp3-d475f62b5ddb82748567b370d886d41d.mp3str"
+
+[deps]
+
+source_file="res://audio/Dragon Bite-SoundBible.com-1625781385.mp3"
+dest_files=[ "res://.import/Dragon Bite-SoundBible.com-1625781385.mp3-d475f62b5ddb82748567b370d886d41d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

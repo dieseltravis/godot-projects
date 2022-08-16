@@ -1,0 +1,156 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://src/TurtleKinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://src/ScoreLabel.gd" type="Script" id=2]
+[ext_resource path="res://img/turt-3.png" type="Texture" id=3]
+[ext_resource path="res://themes/turtle_theme_big.tres" type="Theme" id=4]
+[ext_resource path="res://src/Ground.gd" type="Script" id=5]
+[ext_resource path="res://img/pexels-pixmike-413195-F.jpg" type="Texture" id=6]
+[ext_resource path="res://img/turt-0.png" type="Texture" id=7]
+[ext_resource path="res://scenes/SnekMob.tscn" type="PackedScene" id=8]
+[ext_resource path="res://img/turt-2.png" type="Texture" id=9]
+[ext_resource path="res://img/turt-1.png" type="Texture" id=10]
+[ext_resource path="res://audio/Dragon Bite-SoundBible.com-1625781385.mp3" type="AudioStream" id=11]
+[ext_resource path="res://audio/neck_snap-Vladimir-719669812.mp3" type="AudioStream" id=12]
+[ext_resource path="res://themes/turtle_theme.tres" type="Theme" id=13]
+[ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=14]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32, 330 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 544, 32 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+} ]
+
+[sub_resource type="CircleShape2D" id=8]
+
+[node name="Ground" type="Node2D"]
+script = ExtResource( 5 )
+mob_scene = ExtResource( 14 )
+bad_mob_scene = ExtResource( 8 )
+
+[node name="BackTextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 7
+
+[node name="BoxArea2D" type="Area2D" parent="."]
+
+[node name="LeftCollisionShape2D" type="CollisionShape2D" parent="BoxArea2D"]
+position = Vector2( -32, 300 )
+shape = SubResource( 3 )
+
+[node name="RightCollisionShape2D2" type="CollisionShape2D" parent="BoxArea2D"]
+position = Vector2( 1056, 302 )
+shape = SubResource( 3 )
+
+[node name="TopCollisionShape2D" type="CollisionShape2D" parent="BoxArea2D"]
+position = Vector2( 512, -32 )
+shape = SubResource( 4 )
+
+[node name="BottomCollisionShape2D2" type="CollisionShape2D" parent="BoxArea2D"]
+position = Vector2( 512, 632 )
+shape = SubResource( 4 )
+
+[node name="TurtleKinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 510, 300 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 1 )
+
+[node name="TurtAnimatedSprite" type="AnimatedSprite" parent="TurtleKinematicBody2D"]
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+
+[node name="TurtCollisionShape2D" type="CollisionShape2D" parent="TurtleKinematicBody2D"]
+position = Vector2( 0, -3 )
+scale = Vector2( 2, 2.75 )
+shape = SubResource( 8 )
+
+[node name="DieAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="TurtleKinematicBody2D"]
+position = Vector2( -510, -300 )
+stream = ExtResource( 12 )
+
+[node name="ChompStreamPlayer2D" type="AudioStreamPlayer2D" parent="TurtleKinematicBody2D"]
+unique_name_in_owner = true
+stream = ExtResource( 11 )
+
+[node name="UIControl" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 572.0
+margin_right = 151.0
+margin_bottom = 597.0
+theme = ExtResource( 13 )
+
+[node name="ScoreLabel" type="Label" parent="UIControl"]
+anchor_bottom = 1.0
+theme = ExtResource( 13 )
+text = "Score: 0"
+valign = 2
+script = ExtResource( 2 )
+
+[node name="GameOverLabel" type="Label" parent="UIControl"]
+visible = false
+margin_top = -570.0
+margin_right = 1021.0
+margin_bottom = 28.0
+hint_tooltip = "game over dude"
+mouse_filter = 1
+mouse_default_cursor_shape = 8
+size_flags_horizontal = 7
+size_flags_vertical = 7
+theme = ExtResource( 4 )
+theme_type_variation = "big"
+text = "Game Over"
+align = 1
+valign = 1
+
+[node name="VersionLabel" type="Label" parent="UIControl"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 832.0
+margin_top = -22.0
+margin_right = 872.0
+margin_bottom = 2.0
+theme = ExtResource( 13 )
+theme_type_variation = "v"
+text = "v"
+align = 2
+valign = 2
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[node name="BadMobTimer" type="Timer" parent="."]
+wait_time = 13.0
+autostart = true
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+[connection signal="timeout" from="BadMobTimer" to="." method="_on_BadMobTimer_timeout"]

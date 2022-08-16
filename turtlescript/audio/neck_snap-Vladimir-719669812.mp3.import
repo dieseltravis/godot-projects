@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/neck_snap-Vladimir-719669812.mp3-ac8c02479947446721e96eb39d9b391a.mp3str"
+
+[deps]
+
+source_file="res://audio/neck_snap-Vladimir-719669812.mp3"
+dest_files=[ "res://.import/neck_snap-Vladimir-719669812.mp3-ac8c02479947446721e96eb39d9b391a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

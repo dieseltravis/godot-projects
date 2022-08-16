@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/android-chrome-192x192.png-301b8fa31edb5183bb13310df79f5350.image"
+
+[deps]
+
+source_file="res://img/android-chrome-192x192.png"
+dest_files=[ "res://.import/android-chrome-192x192.png-301b8fa31edb5183bb13310df79f5350.image" ]
+
+[params]
+
