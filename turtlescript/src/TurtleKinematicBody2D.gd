@@ -1,23 +1,22 @@
 extends KinematicBody2D
 
-onready var screen_size = get_viewport_rect().size
-onready var _animated_sprite = $TurtAnimatedSprite
-onready var _die = $DieAudioStreamPlayer2D
-onready var _label = get_node("../UIControl/GameOverLabel")
+onready var screen_size := get_viewport_rect().size
+onready var _animated_sprite := $TurtAnimatedSprite
+onready var _die := $DieAudioStreamPlayer2D
+onready var _label := get_node("../UIControl/GameOverLabel")
 
-#var speed = 0.5
-var maxspeed = 100
-var rotation_speed = 1.5
-var friction = 0.025
-var acceleration = 0.02
+var maxspeed := 100
+var rotation_speed := 1.5
+var friction := 0.025
+var acceleration := 0.02
 
-var velocity = Vector2.ZERO
-var rotation_dir = 0
+var velocity := Vector2.ZERO
+var rotation_dir := 0
 
-var alive = true
+var alive := true
 
 func get_input():
-	var input = Vector2()
+	var input := Vector2()
 	if (alive):
 		rotation_dir = 0
 		if Input.is_action_pressed('right'):
@@ -37,7 +36,7 @@ func get_input():
 	return input
 
 func _physics_process(delta):
-	var direction = get_input()
+	var direction := get_input() as Vector2
 	rotation += rotation_dir * rotation_speed * delta
 	if direction.length() > 0:
 		velocity = lerp(velocity, direction.normalized() * maxspeed, acceleration)

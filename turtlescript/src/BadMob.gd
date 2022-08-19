@@ -1,17 +1,15 @@
 extends RigidBody2D
 
 signal hit
-onready var screen_size = get_viewport_rect().size
-onready var _sprite = $SnekMobAnimatedSprite
-onready var _hiss = $HissAudioStreamPlayer2D
+onready var screen_size := get_viewport_rect().size
+onready var _sprite := $SnekMobAnimatedSprite
+onready var _hiss := $HissAudioStreamPlayer2D
 
-var minspeed = 10
-var maxspeed = 30
-#var velocity = Vector2.ZERO
-#var thrust = Vector2(0, 250)
+var minspeed := 10
+var maxspeed := 30
 
-var random_seed = 12345
-var rng = RandomNumberGenerator.new()
+var random_seed := 12345
+var rng := RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,17 +19,14 @@ func _ready():
 
 func _integrate_forces(_state):
 	if linear_velocity.length() < 10 && linear_velocity.length() > -10:
-		var torque = rng.randf_range(minspeed, maxspeed)
-		#applied_force = -thrust.rotated(rotation)
+		var torque := rng.randf_range(minspeed, maxspeed)
 		applied_force = -Vector2(0, torque * 100).rotated(rotation)
-		#applied_torque = -1 * torque
 	else:
 		applied_force = Vector2.ZERO
 		
 func _physics_process(delta):
 	if linear_velocity.length() < 10 && linear_velocity.length() > -10:
 		rotation += rng.randf_range(-15, 15) * delta
-	#	transform.y = rng.randf_range(minspeed, maxspeed) * delta
 	
 	position.x = wrapf(position.x, 0, screen_size.x)
 	position.y = wrapf(position.y, 0, screen_size.y)

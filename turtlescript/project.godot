@@ -17,8 +17,8 @@ boot_splash/image="res://img/turt-loading.png"
 config/icon="res://img/turtle-snek-512.png"
 config/macos_native_icon="res://img/turtle-snek-512.icns"
 config/windows_native_icon="res://img/icon.ico"
-config/version="0.1.21.1"
-config/build=9
+config/version="0.1.21.2"
+config/build=10
 
 [audio]
 

@@ -1,14 +1,13 @@
 extends RigidBody2D
 
 signal hit
-onready var screen_size = get_viewport_rect().size
-#onready var _sprite = $MobAnimatedSprite
-onready var _eat = $EatStreamPlayer2D as AudioStreamPlayer2D
-onready var _death = $DeathTimer as Timer
+onready var screen_size := get_viewport_rect().size
+onready var _eat := $EatStreamPlayer2D as AudioStreamPlayer2D
+onready var _death := $DeathTimer as Timer
 
-var minspeed = -25
-var maxspeed = 25
-var isDying = false
+var minspeed := -25
+var maxspeed := 25
+var isDying := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
