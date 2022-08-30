@@ -7,24 +7,16 @@ onready var screen_size := get_viewport_rect().size
 onready var _game_over := $UIControl/GameOverLabel
 onready var _score := get_node("UIControl/ScoreLabel")
 onready var _turt := $TurtleKinematicBody2D
-onready var _versionLabel := $"%VersionLabel"
-
-var version := ProjectSettings.get_setting("application/config/version") as String
-var build := ProjectSettings.get_setting("application/config/build") as String
-var version_display := version + "  " + build
 
 const random_seed := 12345
 var rng := RandomNumberGenerator.new()
 
-#TODO: sound effects
-#TODO: main menu, new game
-#TODO: difficulty level selection
+#TODO: difficulty level selection?
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	seed(random_seed)
 	rng.seed = random_seed
-	_versionLabel.text = "v " + version_display
 	
 	_score.text = tr("SCORE") + ": 0"
 	_game_over.text = tr("GAME_OVER")

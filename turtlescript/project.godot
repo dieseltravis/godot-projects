@@ -12,13 +12,13 @@ config_version=4
 
 config/name="turtlescript"
 config/description="turtles"
-run/main_scene="res://scenes/Ground.tscn"
+run/main_scene="res://scenes/TitleScene.tscn"
 boot_splash/image="res://img/turt-loading.png"
 config/icon="res://img/turtle-snek-512.png"
 config/macos_native_icon="res://img/turtle-snek-512.icns"
 config/windows_native_icon="res://img/icon.ico"
-config/version="0.1.21.2"
-config/build=10
+config/version="0.1.22.0"
+config/build=12
 
 [audio]
 

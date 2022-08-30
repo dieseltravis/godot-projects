@@ -130,20 +130,6 @@ text = "Game Over"
 align = 1
 valign = 1
 
-[node name="VersionLabel" type="Label" parent="UIControl"]
-unique_name_in_owner = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 832.0
-margin_top = -22.0
-margin_right = 872.0
-margin_bottom = 2.0
-theme = ExtResource( 13 )
-theme_type_variation = "v"
-text = "v"
-align = 2
-valign = 2
-
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 7.0
 autostart = true

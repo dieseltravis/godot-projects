@@ -11,3 +11,5 @@ data_*/
 # Exports and binaries
 deploy.sh
 deploy/
+
+*.ast
